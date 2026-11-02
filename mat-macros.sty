@@ -1,0 +1,28 @@
+% mathtools deve estar carregado antes (feito pela classe).
+% Garantia de fallback caso este .sty seja usado de forma independente:
+\RequirePackage{mathtools}
+\RequirePackage{amssymb}
+\RequirePackage{tikz-cd}
+\usetikzlibrary{babel}
+
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+
+
+\NewDocumentCommand{\NN}{}{\mathbb{N}}
+\NewDocumentCommand{\NNo}{}{\mathbb{N}_0}
+\NewDocumentCommand{\ZZ}{}{\mathbb{Z}}
+\NewDocumentCommand{\QQ}{}{\mathbb{Q}}
+\NewDocumentCommand{\RR}{}{\mathbb{R}}
+\NewDocumentCommand{\CC}{}{\mathbb{C}}
+\NewDocumentCommand{\KK}{}{\mathbb{K}}
+\NewDocumentCommand{\FF}{}{\mathbb{F}}
+
+\NewDocumentCommand{\restr}{ m }{\rvert_{#1}}
+
+\DeclarePairedDelimiterX{\set}[1]{\{}{\}}{ #1 }
+\DeclarePairedDelimiterX{\setc}[2]{\{}{\}}{ #1 \colon #2 }
+
+\DeclareMathOperator{\graf}{Graf}
+\DeclareMathOperator{\lip}{Lip}
+\DeclareMathOperator{\orb}{Orb}

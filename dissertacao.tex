@@ -1,0 +1,107 @@
+\documentclass[grau=mestrado, openright]{ppgmat-ime-dissertacao}
+\usepackage{dmat-teoremas}
+\usepackage{mat-macros}
+% Se você não usar subfiles, pode remover o pacote e inserir cada seção do seu trabalho com \include{}. Remova também a linha
+\usepackage{subfiles}
+\usepackage{lipsum}
+\addbibresource{\subfix{bibliografia.bib}} % PARA USO COM O SUBFILES. Caso não for utilizar o subfiles, remova essa linha e descomente a próxima
+% \addbibresource{bibliografia.bib}
+
+% ============================
+% CONFIGURAÇÕES DO ZREF-CLEVER
+% Por padrão utilizamos a opção 'capfirst'. Caso queira alterar o comportamento do comando, confira a documentação do pacote zref-clever para mais informações
+% Por exemplo podemos remover o nome da referência. Por exemplo 'Definição 2.3.1' vira '2.3.1'.
+% \zcsetup{noname}
+% ============================
+
+
+% Insira as informações de autor, título do trabalho, data, orientador e coorientador (se houver)
+\autor{Fulano da Silva}
+\titulo{Modelo de dissertação do PPGMAT-IME}
+\data{2026}
+\orientador{Nome do orientador}
+% \coorientador{Nome do coorientador}
+
+% ============================
+% OPCIONAL
+% ============================
+% As informações abaixos já são preenchidas automaticamente pelo modelo. Caso queira alterar alguma delas, basta descomentar o código abaixo.
+% \instituicao{%
+%   Universidade Federal de Uberlândia -- UFU
+%   \par
+%   Instituto de Matemática e Estatística
+%   \par
+%   Graduação}
+% \local{Uberlândia - MG}
+% O preambulo deve conter o tipo do trabalho, o objetivo, 
+% o nome da instituição e a área de concentração 
+% \preambulo{Monografia apresentada ao Instituto de Matemática e Estatística, UFU, como requisito para obtenção do título de Bacharel em Matemática,
+% sob orientação do Prof. Dr. Orientador da Silva.}
+\selectlanguage{brazil}
+
+\begin{document}
+
+% INÍCIO DOS ELEMENTOS PRÉ-TEXTUAIS
+\frenchspacing % Espaçamento requerido pela Norma
+\pretextual % Marca o início dos elementos pré-textuais a fim de contagem de páginas
+
+\imprimircapa
+\imprimirfolhaderosto* % mantenha o asterisco para não alterar a contagem de páginas
+
+% A folha de aprovação deve ser inserida após a defesa. 
+% Geralmente você obtém um pdf gerado pelo SEI e o inclui no trabalho pelo comando abaixo.
+% \begin{folhadeaprovacao}
+% \includepdf{folhadeaprovacao_final.pdf}
+% \end{folhadeaprovacao}
+
+\begin{agradecimentos}
+    Agradeço...
+\end{agradecimentos}
+
+\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+\begin{resumo}
+    Este é um modelo baseado no abntex2.
+
+    \vspace{\onelineskip}
+    \noindent
+    \textbf{Palavras-chave}: Modelo. ABNT. Matemática.
+\end{resumo}
+
+\begin{resumo}[Abstract]
+    \begin{otherlanguage*}{english}
+        This is a template based on abntex2
+
+    \vspace{\onelineskip}
+    \noindent
+    \textbf{Keywords}: Template. ABNT. Mathematics.
+
+    \end{otherlanguage*}
+
+\end{resumo}
+% Sumário
+\tableofcontents*
+\cleardoublepage
+
+
+% INÍCIO DOS ELEMENTOS TEXTUAIS
+\textual
+
+\subfile{secoes/introducao.tex} % Obrigatório
+
+% --------------
+% DESENVOLVIMENTO
+% --------------
+
+\subfile{secoes/preliminares.tex}
+\subfile{secoes/capitulo1.tex}
+
+
+
+% =====================================================
+% PÓS TEXTUAL
+% =====================================================
+\postextual
+\printbibliography
+
+\end{document}
+

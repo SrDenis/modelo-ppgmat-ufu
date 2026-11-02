@@ -1,0 +1,26 @@
+\documentclass[../dissertacao]{subfiles}
+
+\begin{document}
+
+\chapter{Preliminares}
+
+\section{Análise Funcional}
+
+\begin{theorem}[Teorema da Aplicação Aberta]\label{thm:aplicacaoaberta}
+    Sejam \(E\) e \(F\) espaços de Banach e \(T:E\to F\) um operador linear contínuo. Então \(T\) é uma aplicação aberta, isto é, \(T(U)\)
+    é aberto em \(F\) para todo aberto \(U\) em \(E\).
+\end{theorem}
+\begin{corollary}
+    Sejam \(E\) e \(F\) espaços de Banach e \(T:E\to F\) um operador linear contínuo. Se \(T\) é bijetor, então \(T\) é um isomorfismo.
+\end{corollary}
+\begin{theorem}[Teorema do Gráfico fechado]\label{thm:graficofechado}
+    Sejam \(E\) e \(F\) espaços de Banach e \(T:E\to F\) um operador linear. Se o gráfico de \(T\), isto é, o conjunto \(\graf(T)=\setc{(x,y)\in E\times F}{y=T(x)}\), é fechado, então \(T\) é contínua. 
+\end{theorem}
+\begin{theorem}[Teorema de Hahn-Banach]
+    Sejam \(G\) um subespaço de um espaço normado \(E\) e seja \(\varphi:G\to \KK\) um funcional linear contínuo. Então existe um funcional linear contínuo \(\tilde{\varphi}:E\to\KK\) cuja restrição a \(G\) coincide com \(\varphi\) e \(\norm{\varphi}=\norm{\tilde{\varphi}}\).
+\end{theorem}
+\begin{corollary}\label{cor:hahnbanachfuncional}
+    Seja \(E\) um espaço normado. Para todo \(x_0\in E\setminus\set{0}\), existe um funcional linear \(\varphi\in E'\) tal que \(\norm{\varphi}=1\) e \(\varphi(ax_0)=a\norm{x_0}\) para todo \(a\in\KK\).
+\end{corollary}
+
+\end{document}

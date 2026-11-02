@@ -1,0 +1,172 @@
+%% ============================================================
+%% Algumas dicas:
+%%
+%%   Rótulo e nome (sintaxe de chave-valor):
+%%     \begin{theorem}[label=teo:baire, name={Baire}]
+%%
+%%   Restatement — reimprimir o enunciado com o mesmo número:
+%%     \begin{theorem}[store=teo-baire, name={Baire}]
+%%       Enunciado...
+%%     \end{theorem}
+%%     ...
+%%     \restatetheorem{teo-baire}    % mesmo número, em qualquer ponto
+%%     \restatetheorem*{teo-baire}   % só o corpo, sem cabeçalho
+%%
+%%   Número manual — para teoremas importados de outro documento:
+%%     \begin{theorem}[manual-num=2.3, name={Baire}]
+%%
+%%   Lista de teoremas filtrada:
+%%     \listofkeytheorems[title={Teoremas Principais}, only={theorem}]
+%%
+%% AMBIENTES DEFINIDOS:
+%%   Numerados (contador compartilhado por seção):
+%%     teorema, lema, corolario, proposicao, afirmacao,
+%%     conjectura, definicao, exemplo, exercicio, notacao
+%%   Não numerados:
+%%     observacao, nota, prova (= proof em português)
+
+%% USO EM ARTIGOS / OUTROS DOCUMENTOS:
+%%   \usepackage{keytheorems}
+%%   \usepackage{dmat-teoremas}
+%%   — mesmos ambientes, sem dependência da classe ppgmat-ime-dissertacao.
+%% ============================================================
+
+\NeedsTeXFormat{LaTeX2e}[2022-11-01]
+\RequirePackage{keytheorems}
+% ============================================================
+% §1  ESTILOS
+% ============================================================
+
+% \newkeytheoremstyle { dmat-plain } {
+%   bodyfont   = \normalfont\itshape  ,
+%   headfont   = \normalfont\bfseries ,
+%   notefont   = \normalfont\bfseries ,
+%   notebraces = {(}{)}               ,
+%   headpunct  = {.}                  ,
+% }
+
+% \newkeytheoremstyle { dmat-definition } {
+%   bodyfont   = \normalfont          ,
+%   headfont   = \normalfont\bfseries ,
+%   notefont   = \normalfont\bfseries ,
+%   notebraces = {(}{)}               ,
+%   headpunct  = {.}                  ,
+% }
+
+% \newkeytheoremstyle { dmat-remark } {
+%   bodyfont   = \normalfont\upshape  ,
+%   headfont   = \normalfont\itshape  ,
+%   notefont   = \normalfont\itshape  ,
+%   notebraces = {(}{)}               ,
+%   headpunct  = {.}                  ,
+% }
+
+% ============================================================
+% §2  AMBIENTES NUMERADOS — estilo plain
+% ============================================================
+% O contador 'teorema' é a raiz; todos os demais compartilham
+% via sibling=teorema (incrementam o mesmo contador).
+
+\newkeytheorem { theorem } [
+  style        = plain              ,
+  name         = Teorema                 ,
+  numberwithin = section                 ,
+  refname    = {teorema,teoremas}      ,
+  Refname    = {Teorema,Teoremas}      ,
+]
+
+\newkeytheorem { lemma } [
+  style        = plain              ,
+  sibling      = theorem                 ,
+  name         = Lema                    ,
+  refname    = {lema,lemas}            ,
+  Refname    = {Lema,Lemas}            ,
+]
+
+\newkeytheorem { corollary } [
+  style        = plain              ,
+  sibling      = theorem                 ,
+  name         = Corolário               ,
+  refname    = {corolário,corolários}  ,
+  Refname    = {Corolário,Corolários}  ,
+]
+
+\newkeytheorem { proposition } [
+  style        = plain              ,
+  sibling      = theorem                 ,
+  name         = Proposição              ,
+  refname    = {proposição,proposições},
+  Refname    = {Proposição,Proposições},
+]
+
+\newkeytheorem { claim } [
+  style        = plain              ,
+  sibling      = theorem                 ,
+  name         = Afirmação               ,
+  refname    = {afirmação,afirmações}  ,
+  Refname    = {Afirmação,Afirmações}  ,
+]
+
+\newkeytheorem { conjecture } [
+  style        = plain              ,
+  sibling      = theorem                 ,
+  name         = Conjectura              ,
+  refname    = {conjectura,conjecturas},
+  Refname    = {Conjectura,Conjecturas},
+]
+
+% ============================================================
+% §3  AMBIENTES NUMERADOS — estilo definition
+% ============================================================
+
+\newkeytheorem { definition } [
+  style        = definition         ,
+  sibling      = theorem                 ,
+  name         = Definição               ,
+  refname    = {definição,definições}  ,
+  Refname    = {Definição,Definições}  ,
+]
+
+\newkeytheorem { example } [
+  style        = definition         ,
+  sibling      = theorem                 ,
+  name         = Exemplo                 ,
+  refname    = {exemplo,exemplos}      ,
+  Refname    = {Exemplo,Exemplos}      ,
+]
+
+\newkeytheorem { exercise } [
+  style        = definition         ,
+  sibling      = theorem                 ,
+  name         = Exercício               ,
+  refname    = {exercício,exercícios}  ,
+  Refname    = {Exercício,Exercícios}  ,
+]
+
+\newkeytheorem { notation } [
+  style        = definition         ,
+  sibling      = theorem                 ,
+  name         = Notação                 ,
+  refname    = {notação,notações}      ,
+  Refname    = {Notação,Notações}      ,
+]
+
+% ============================================================
+% §4  AMBIENTES NÃO NUMERADOS
+% ============================================================
+
+\newkeytheorem { remark } [
+  style    = remark ,
+  numbered = no          ,
+  name     = Observação  ,
+]
+
+\newkeytheorem { note } [
+  style    = remark ,
+  numbered = no          ,
+  name     = Nota        ,
+]
+
+% ============================================================
+% FIM DO PACOTE  dmat-teoremas.sty
+% ============================================================

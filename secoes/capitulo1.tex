@@ -1,0 +1,37 @@
+\documentclass[../dissertacao]{subfiles}
+
+\begin{document}
+\chapter{Primeiro capítulo}
+
+\section{Aqui está uma seção}
+
+\begin{definition}[Espaços Completos]\label{def:completo}
+    Um espaço métrico é \emph{completo} se toda sequência de Cauchy converge para um elemento do espaço. 
+\end{definition}
+
+Podemos referenciar a \zcref{def:completo} desta forma. Note que o comando já adiciona a palavra "Definição". Caso não queira esse comportamento, use \zcref[noname]{def:completo}
+Aqui vai mais alguns exemplos do 'zcref':
+
+\begin{enumerate}
+    \item primeiro item \label{item:1}
+    \item segundo item \label{item:2}
+    \item terceiro item \label{item:3}
+\end{enumerate}
+
+Confira os \zcref{item:1,item:2,item:3}.
+
+\begin{theorem}\label{thm:a}
+    teorema...
+\end{theorem}
+\begin{theorem}\label{thm:b}
+    teorema...
+\end{theorem}
+\begin{theorem}\label{thm:c}
+    teorema...
+\end{theorem}
+
+\zcref{thm:a,thm:c} e também o \zcref{thm:b}
+
+\lipsum
+
+\end{document}
